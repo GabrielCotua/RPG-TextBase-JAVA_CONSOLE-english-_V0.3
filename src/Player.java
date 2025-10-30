@@ -12,8 +12,8 @@ public class Player { // player character
   private int xpNextLevel = 10;
   private boolean isAlive = true;
 
-  public Player(String clase, String name) { // assigns a player class
-    this.clase = clase;
+  public Player(String _clase, String name) { // assigns a player class
+    this.clase = _clase;
     if (clase.equals("t")) {
       username = name;
       level = 1;

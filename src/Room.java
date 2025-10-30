@@ -1,15 +1,7 @@
 public class Room {
-  private Enemy enemy;
   private boolean fight;
-  private Player player;
   private String desc;
 
-  public Room(Player player, boolean fight, Enemy enemy, String desc) {
-    this.player = player;
-    this.fight = fight;
-    this.enemy = enemy;
-    this.desc = desc;
-  }
 
   public Room(boolean fight, String desc) {
     this.fight = fight;
@@ -19,14 +11,13 @@ public class Room {
     
   }
 
-  public static Room createRoom(Player player, boolean prevEmpty) {
+  public Room createRoom(Player player, boolean prevEmpty) {
     int num = Main.randomNum();
 
     if (prevEmpty || num % 2 == 0) {
       boolean fight = true;
-      Enemy enemy = new Enemy(player);
       String desc = getRandomDescription();
-      return new Room(player, fight, enemy, desc);
+      return new Room(fight, desc);
     } else {
       boolean fight = false;
       String desc = "is strange... is so quiet, looks like nobody is here, lets move on to the next room";
