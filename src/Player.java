@@ -1,4 +1,4 @@
-public class Player { // player character
+public class Player extends Entity{ // player character
   private String username = " ";
   private String clase;
   private String claseDelPersonaje = " ";
@@ -15,110 +15,110 @@ public class Player { // player character
   public Player(String _clase, String name) { // assigns a player class
     this.clase = _clase;
     if (clase.equals("t")) {
-      username = name;
-      level = 1;
-      health = 25;
-      maxHealth = 25;
-      damage = 6;
-      xp = 0;
-      claseDelPersonaje = "Tank";
+      this.username = name;
+      this.level = 1;
+      this.health = 25;
+      this.maxHealth = 25;
+      this.damage = 6;
+      this.xp = 0;
+      this.claseDelPersonaje = "Tank";
     }
     if (clase.equals("m")) {
-      username = name;
-      level = 1;
-      health = 16;
-      maxHealth = 16;
-      damage = 8;
-      xp = 0;
-      claseDelPersonaje = "Mage";
-      mana = 20;
-      maxMana = 20;
+      this.username = name;
+      this.level = 1;
+      this.health = 16;
+      this.maxHealth = 16;
+      this.damage = 8;
+      this.xp = 0;
+      this.claseDelPersonaje = "Mage";
+      this.mana = 20;
+      this.maxMana = 20;
     }
     if (clase.equals("w")) {
-      username = name;
-      level = 1;
-      health = 17;
-      maxHealth = 17;
-      damage = 7;
-      xp = 0;
-      claseDelPersonaje = "Warrior";
+      this.username = name;
+      this.level = 1;
+      this.health = 17;
+      this.maxHealth = 17;
+      this.damage = 7;
+      this.xp = 0;
+      this.claseDelPersonaje = "Warrior";
     }
   }
 
   public void stats() { // gives mage stats
     if (claseDelPersonaje.equals("Mage")) {
       System.out.println("\b [Player Stats] \n");
-      System.out.println("Name: " + username);
-      System.out.println("Level: " + level);
-      System.out.println("Hp: " + health + "/" + maxHealth);
-      System.out.println("Mana: " + mana + "/" + maxMana);
-      System.out.println("Xp: " + xp + "/" + xpNextLevel);
-      System.out.println("Attack: " + damage);
+      System.out.println("Name: " + this.username);
+      System.out.println("Level: " + this.level);
+      System.out.println("Hp: " + this.health + "/" + this.maxHealth);
+      System.out.println("Mana: " + this.mana + "/" + this.maxMana);
+      System.out.println("Xp: " + this.xp + "/" + this.xpNextLevel);
+      System.out.println("Attack: " + this.damage);
     } else {
       // everyone else stats
       System.out.println("\b [Player Stats] \n");
-      System.out.println("Name: " + username);
-      System.out.println("Level: " + level);
-      System.out.println("Hp: " + health + "/" + maxHealth);
-      System.out.println("Xp: " + xp + "/" + xpNextLevel);
-      System.out.println("Attack: " + damage);
+      System.out.println("Name: " + this.username);
+      System.out.println("Level: " + this.level);
+      System.out.println("Hp: " + this.health + "/" + this.maxHealth);
+      System.out.println("Xp: " + this.xp + "/" + this.xpNextLevel);
+      System.out.println("Attack: " + this.damage);
     }
   }
   public void CheckNewLevel(){
-    if(xp >= 10){
-      level ++;
-      xp -= 10;
+    if(this.xp >= 10){
+      this.level ++;
+      this.xp -= 10;
       System.out.println("Congratulations!!! Level Up!!");
-      health +=2;
-      maxHealth += 2;
-      damage +=2;
-      mana += 2;
-      maxMana +=2;
+      this.health +=2;
+      this.maxHealth += 2;
+      this.damage +=2;
+      this.mana += 2;
+      this.maxMana +=2;
     } else {
       System.out.println((10 - xp) + " xp left to reach a new level!");
     }
   }
 
   public int getLevel() { // gives actual player level
-    return level;
+    return this.level;
   }
   
   public int getDamage() { // gives the attack damage of the class
-    return damage;
+    return this.damage;
   }
 
   public int getHealth() { // gives the actual hp
-    return health;
+    return this.health;
   }
 
   public void setHealth(int he) { // lower health when gets attack
-    health = he;
+    this.health = he;
   }
 
   public boolean getIsAlive() { // current life status
-    return isAlive;
+    return this.isAlive;
   }
 
   public void setIsAlive(boolean dead) { // change false if die
-    isAlive = dead;
+    this.isAlive = dead;
   }
 
   public String getClase() { // give class that player choose
-    return claseDelPersonaje;
+    return this.claseDelPersonaje;
   }
 
   public int getMaxHealth() { // gives max health of that class
-    return maxHealth;
+    return this.maxHealth;
   }
   
   public String getUsername() { // choosed player username
-    return username;
+    return this.username;
   }
   public void setXp(int xp){
     this.xp += xp;
   }
   public int getXp(){
-    return xp;
+    return this.xp;
   }
   
 }

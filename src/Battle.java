@@ -94,9 +94,9 @@ public class Battle {
     if (enemy.getHealth() < enemy.getMaxHealth() && enemy.getHealth() - enemy.getMaxHealth() <= num) {
       System.out.println("\n¡The " + enemy.getName() + " got healed " + num + " hp!\n");
       enemy.setHealth(enemy.getHealth() + num);
+      System.out.println("\nEnemy hp: " + enemy.getHealth() + "/" + enemy.getMaxHealth() + "\n");
     } else {
-      System.out
-          .println("\nThe enemy " + enemy.getName() + " already have enough hp, so, decides to save it for later!\n");
+      System.out.println("\nThe enemy " + enemy.getName() + " already have enough hp, so, decides to save it for later!\n");
     }
     System.out.println("******************************************\n");
   }

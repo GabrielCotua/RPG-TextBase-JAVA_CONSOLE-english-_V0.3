@@ -1,10 +1,9 @@
-
+import java.util.*;
 /**
 *Date: 05/21/2023
 *Author: Gabriel Cotua
 *School: EPHS
 */
-import java.util.*;
 
 public class Main { // everything executes here
   private static Scanner scan = new Scanner(System.in);
@@ -48,6 +47,8 @@ public class Main { // everything executes here
     if (clase.equalsIgnoreCase("w")) { // assign the Warrior class and start an encounter
       GameStart();
     }
+
+    scan.close();
   }
 
   public static void GameStart() { // starts the game environment
